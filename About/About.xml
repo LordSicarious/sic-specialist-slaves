@@ -6,7 +6,12 @@
 	<li>1.3</li>
 	</supportedVersions>
 	<packageId>SIC.Ideology.SpecialistSlaves</packageId>
-	<description>Allows for slaves to be assigned some specialist roles in ideoligions and implements a framework for different roles to either forbid, allow or require being held by slaves.</description>
+	<description>A simple RimWorld mod that allows some ideology roles to be held by slaves.
+
+From the base game, the Animals, Mining, Plants and Production Specialist roles can be slaves. Leaders, Moral Guides, and Combat or Research Specialists cannot be slaves. Each roles' work restrictions are applied on top of the natural restrictions from slavery, so some roles might be better held by free pawns to avoid locking out too many types of work!
+
+In addition, this implements a simple framework that allows mods implementing other ideology roles to declare the slave status of each ideology role, as either "Forbidden", "Allowed", or even "Required"!
+Slaves are forbidden from holding roles by default if unspecified.</description>
   	<modDependencies>
 	  	<li>
   			<packageId>brrainz.harmony</packageId>
