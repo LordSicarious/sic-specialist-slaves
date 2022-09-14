@@ -7,7 +7,7 @@ In addition, this implements a simple framework that allows mods implementing ot
 ```
 <modExtensions>
   <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
-    <slavePermitted>**Forbidden/Allowed/Required**\</slavePermitted>
+    <slavePermitted>SLAVEPREFERENCEGOESHERE</slavePermitted>
   </li>
 </modExtensions>
 ```
