@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <RoleRequirementFree>Must be free</RoleRequirementFree>
+    <RoleRequirementFreeOrSlave>May be free or a slave</RoleRequirementFreeOrSlave>
+    <RoleRequirementSlave>Must be a slave</RoleRequirementSlave>
+</LanguageData>
