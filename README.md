@@ -5,10 +5,10 @@ From the base game, the Animals, Mining, Plants and Production Specialist roles 
 
 In addition, this implements a simple framework that allows mods implementing other ideology roles to declare the slave status of each ideology role, as either "Forbidden", "Allowed", or even "Required"! Simply add the following code to your role's PreceptDef:
 
-<modExtensions>
-  <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
-    <slavePermitted>**Forbidden/Allowed/Required**</slavePermitted>
-  </li>
-</modExtensions>
+\<modExtensions>
+  \<li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
+    \<slavePermitted>**Forbidden/Allowed/Required**\</slavePermitted>
+  \</li>
+\</modExtensions>
 
 Slaves are forbidden from holding roles by default if unspecified.
