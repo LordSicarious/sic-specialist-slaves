@@ -3,4 +3,13 @@
     <RoleRequirementFree>Must be free</RoleRequirementFree>
     <RoleRequirementFreeOrSlave>May be free or a slave</RoleRequirementFreeOrSlave>
     <RoleRequirementSlave>Must be a slave</RoleRequirementSlave>
+    <RoleEffectWillingSlave>Does not require suppression</RoleEffectWillingSlave>
+    <RoleRequirementLabelSubordinateGender>Must be {0}</RoleRequirementLabelSubordinateGender>
+
+    <Man>man</Man>
+    <Men>men</Men>
+    <Woman>woman</Woman>
+    <Women>women</Women>
+    <Person>person</Person>
+    <People>people</People>
 </LanguageData>

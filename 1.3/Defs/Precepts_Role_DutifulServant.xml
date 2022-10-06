@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Adds the Dutiful Servant role for slaves of the subordinate gender in gendered supremacy ideologies. -->
+<Defs>
+    <PreceptDef Abstract="True" Name="DutifulServantBase">
+        <issue>IdeoRole</issue>
+        <preceptClass>Precept_RoleMulti</preceptClass>
+        <createsRoleEmptyThought>False</createsRoleEmptyThought>
+        <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+        <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+        <iconPath>UI/Roles/DutifulServant</iconPath>
+        <roleRequirements>
+            <li Class="RoleRequirement_SameIdeo">
+                <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+            </li>
+            <li Class="SpecialistSlaves.RoleRequirement_SubordinateGender">
+                <labelKey>RoleRequirementLabelSubordinateGender</labelKey>
+            </li>
+        </roleRequirements>
+        <modExtensions>
+            <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
+                <slavePermitted>Required</slavePermitted>
+            </li>
+        </modExtensions>    
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>IdeoRoleApparelRequirementNotMet</thought>
+            </li>
+        </comps>
+        <roleEffects>
+            <li Class="SpecialistSlaves.RoleEffect_WillingSlave"></li>
+            <li Class="RoleEffect_PawnStatFactor">
+                <statDef>PainShockThreshold</statDef>
+                <modifier>0.5</modifier>
+            </li>
+            <li Class="RoleEffect_PawnStatFactor">
+                <statDef>WorkSpeedGlobal</statDef>
+                <modifier>1.15</modifier>
+            </li>
+        </roleEffects>
+        <roleDisabledWorkTags>
+            <li>Violent</li>
+        </roleDisabledWorkTags>
+        <impact>Medium</impact>
+        <roleApparelRequirements>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Collar</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Broadwrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_WarVeil</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_BodyStrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                    <li>FullHead</li>
+                    <li>UpperHead</li>
+                    <li>Legs</li>
+                    <li>Arms</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Burka</li>
+                </requiredDefs>
+            </requirement></li>
+            <li MayRequire="VanillaExpanded.VAPPE"><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>VAE_Apparel_Apron</li>
+                </requiredDefs>
+            </requirement></li>
+        </roleApparelRequirements>
+        <roleApparelRequirementCountCurve>
+        <points>
+            <li>(0, 1)</li>
+            <li>(1, 1)</li>
+        </points>
+        </roleApparelRequirementCountCurve>
+    </PreceptDef>
+
+    <PreceptDef ParentName="DutifulServantBase">
+        <defName>IdeoRole_DutifulServantMale</defName>
+        <label>dutiful servant</label>
+        <description>A ideoligious status for male slaves indicating their willing servitude. Slaves holding this role do not need to be suppressed, are not restricted from art or research, and receive a small bonus to Global Work Speed instead of a penalty. However, they also expect to be better looked after than normal slaves, and their demure nature makes them useless in combat.</description>
+        <nameMaker>NamerRoleDutifulServantMale</nameMaker>
+        <roleTags><li>DutifulServant</li></roleTags>
+        <requiredMemes>
+            <li>FemaleSupremacy</li>
+        </requiredMemes>
+        <grantedAbilities>
+            <li>DemureAffection</li>
+        </grantedAbilities>
+        <displayOrderInImpact>2</displayOrderInImpact>
+        <roleApparelRequirements>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_VestRoyal</li>
+                </requiredDefs>
+            </requirement></li>
+            <li MayRequire="VanillaExpanded.VAPPE"><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>VAE_Apparel_Trousers</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>Male</li>
+                </requiredTags>
+            </requirement></li>
+        </roleApparelRequirements>
+    </PreceptDef>
+
+    <PreceptDef ParentName="DutifulServantBase">
+        <defName>IdeoRole_DutifulServantFemale</defName>
+        <label>dutiful servant</label>
+        <description>A ideoligious status for female slaves indicating their willing servitude. Slaves holding this role do not need to be suppressed, are not restricted from art or research, and receive a small bonus to Global Work Speed instead of a penalty. However, they also expect to be better looked after than normal slaves, and their demure nature makes them useless in combat.</description>
+        <requiredMemes>
+            <li>MaleSupremacy</li>
+        </requiredMemes>
+        <nameMaker>NamerRoleDutifulServantFemale</nameMaker>
+        <grantedAbilities>
+            <li>DemureAffection</li>
+        </grantedAbilities>
+        <displayOrderInImpact>2</displayOrderInImpact>
+        <roleApparelRequirements>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Corset</li>
+                </requiredDefs>
+            </requirement></li>
+            <li MayRequire="VanillaExpanded.VAPPE"><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>VAE_Apparel_Skirt</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>Female</li>
+                </requiredTags>
+            </requirement></li>
+        </roleApparelRequirements>
+    </PreceptDef>
+</Defs>

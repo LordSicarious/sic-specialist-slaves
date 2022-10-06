@@ -90,8 +90,25 @@
         <Compile Include="Source/RoleRequirement_SlaveStatus.cs" />
         <Compile Include="Source/SlaveStatusRequirement.cs" />
         <Compile Include="Source/SpecialistSlaves_ModExtension.cs" />
+        <Compile Include="Source/SpecialistSlavesDefOf.cs" />
+        <Compile Include="Source/SpecialistSlavesUtility.cs" />
+        <!-- Dutiful Servant -->
+        <Compile Include="Source/DutifulServant/CompAbilityEffect_DemureAffection.cs" />
+        <Compile Include="Source/DutifulServant/CompProperties_AbilityDemureAffection.cs" />
+        <Compile Include="Source/DutifulServant/RoleEffect_WillingSlave.cs" />
+        <Compile Include="Source/DutifulServant/RoleRequirement_SubordinateGender.cs" />
+        <Compile Include="Source/DutifulServant/Thought_AssuredSuperiority.cs" />
+        <!-- Harmony Patches -->
         <Compile Include="Source/HarmonyPatches/ApplyHarmonyPatches.cs" />
-        <Compile Include="Source/HarmonyPatches/Harmony_ValidatePawn.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_ActiveFor.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_CanParticipateInSlaveRebellion.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_HasRequiredTag.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_ShouldShowFor.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_ValidatePawn.cs" />
+        <Compile Include="Source/HarmonyPatches/Prefix_DrawSuppressionBar.cs" />
+        <Compile Include="Source/HarmonyPatches/Prefix_NeedInterval.cs" />
+        <Compile Include="Source/HarmonyPatches/Transpiler_AllApparelRequirementLabels.cs" />
+        <Compile Include="Source/HarmonyPatches/Transpiler_FillTab.cs" />
     </ItemGroup>
 
     <Import Project="$(MSBuildToolsPath)/Microsoft.CSharp.targets" />

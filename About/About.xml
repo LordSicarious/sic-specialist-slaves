@@ -10,7 +10,13 @@
 
 From the base game, the Animals, Mining, Plants and Production Specialist roles can be slaves. Leaders, Moral Guides, and Combat or Research Specialists cannot be slaves. Each roles' work restrictions are applied on top of the natural restrictions from slavery, so some roles might be better held by free pawns to avoid locking out too many types of work!
 
-In addition, this implements a simple framework that allows mods implementing other ideology roles to declare the slave status of each ideology role, as either "Forbidden", "Allowed", or even "Required"!
+This mod also adds the Dutiful Servant role exclusive to slaves of an Ideoligion whose beliefs call for them to defer to the opposite sex, representing their willing obedience in accordance with their beliefs.
+	
+Dutiful Servants have a small bonus to Global Work Speed instead of a penalty, are not restricted from Artistic or Intellectual work, do not require suppression, and never rebel. The happier they are in service, the more grateful they will be!
+
+However, their expectations are also higher than that of ordinary slaves, as they expect to be well cared for in return for by their superiors, and their demure nature makes them useless in combat.
+
+This also implements a simple framework that allows mods implementing other ideology roles to declare the slave status of each ideology role using a simple XML tag.
 Slaves are forbidden from holding roles by default if unspecified.</description>
   	<modDependencies>
 	  	<li>

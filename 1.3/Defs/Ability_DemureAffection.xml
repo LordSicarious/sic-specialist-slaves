@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Adds special ability for the Dutiful Servant. -->
+<Defs>
+    <AbilityDef>
+        <defName>DemureAffection</defName>
+        <label>Demure Affection</label>
+        <description>A comforting display of deference towards a superior, improving their mood and strengthening their convictions. The effect scales with the speaker's Social Impact, conviction in their beliefs, and satisfaction with their own life.</description>
+        <groupDef>MultiRole</groupDef>
+        <iconPath>UI/Abilities/DemureAffection</iconPath>
+        <warmupMoteSocialSymbol>UI/Abilities/DemureAffection</warmupMoteSocialSymbol>
+        <hotKey>Misc12</hotKey>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <stunTargetWhileCasting>True</stunTargetWhileCasting>
+        <showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <warmupSound>MoralistAbility_Warmup</warmupSound>
+        <comps>
+            <li Class="SpecialistSlaves.CompProperties_AbilityDemureAffection">
+                <compClass>SpecialistSlaves.CompAbilityEffect_DemureAffection</compClass>
+            </li>
+            <li Class="CompProperties_AbilityMustBeCapableOf">
+                <workTags><li>Social</li></workTags>
+            </li>
+        </comps>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>False</drawAimPie>
+            <range>-1</range>
+            <warmupTime>3.0</warmupTime>
+            <targetParams>
+                <canTargetBuildings>False</canTargetBuildings>
+                <neverTargetHostileFaction>True</neverTargetHostileFaction>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Thought added by ability -->
+    <ThoughtDef>
+        <defName>AssuredSuperiority</defName>
+        <thoughtClass>SpecialistSlaves.Thought_AssuredSuperiority</thoughtClass>
+        <durationDays>1</durationDays>
+        <stackLimit>3</stackLimit>
+        <stages><li>
+            <label>Assured Superiority</label>
+            <description>It is good to know that our {0} are happy to obey me, as is proper.</description>
+            <baseMoodEffect>5</baseMoodEffect>
+            <baseOpinionOffset>10</baseOpinionOffset>
+        </li></stages>
+    </ThoughtDef>
+
+    <!-- Interaction recorded by ability -->
+    <InteractionDef>
+        <defName>DemureAffection</defName>
+        <label>demure affection</label>
+        <symbol>UI/Abilities/DemureAffection</symbol>
+        <logRulesInitiator>
+            <rulesStrings>
+                <li>r_logentry->[INITIATOR_nameDef] comforted [RECIPIENT_nameDef] with a display of ideoligious submission.</li>
+            </rulesStrings>
+        </logRulesInitiator>
+      </InteractionDef>
+</Defs>
