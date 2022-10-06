@@ -27,6 +27,12 @@ namespace SpecialistSlaves {
             modified = nameof(Postfix_CanParticipateInSlaveRebellion.CanParticipateInSlaveRebellion_Postfix);
             harmony.Patch(original, postfix: new HarmonyMethod(patchType, modified));
 
+			//Postfix to [RimWorld.ThoughtWorker_ExpectationsSlave.CurrentStateInternal]
+            patchType = typeof(Postfix_CurrentStateInternal);
+            original = AccessTools.Method(typeof(ThoughtWorker_ExpectationsSlave), name: "CurrentStateInternal");
+            modified = nameof(Postfix_CurrentStateInternal.CurrentStateInternal_Postfix);
+            harmony.Patch(original, postfix: new HarmonyMethod(patchType, modified));
+
 			//Postfix to [RimWorld.ApparelRequirement.HasRequiredTag]
             patchType = typeof(Postfix_HasRequiredTag);
             original = AccessTools.Method(typeof(ApparelRequirement), name: "HasRequiredTag");

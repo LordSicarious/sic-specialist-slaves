@@ -187,4 +187,37 @@
             </requirement></li>
         </roleApparelRequirements>
     </PreceptDef>
+
+    <ThoughtDef>
+        <defName>ExpectationsDutifulServant</defName>
+        <workerClass>SpecialistSlaves.ThoughtWorker_ExpectationsDutifulServant</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+          <li>
+            <label>extremely low {0} expectations</label>
+            <description>I'm just a {0}, and we have almost nothing. My comfort is irrelevant.</description>
+            <baseMoodEffect>36</baseMoodEffect>
+          </li>
+          <li>
+            <label>very low {0} expectations</label>
+            <description>I'm just a {0}, and there's so much work to be done. My comfort is not a priority.</description>
+            <baseMoodEffect>27</baseMoodEffect>
+          </li>
+          <li>
+            <label>low {0} expectations</label>
+            <description>I'm just a {0}, and there's work to be done. My comfort is secondary.</description>
+            <baseMoodEffect>20</baseMoodEffect>
+          </li>
+          <li>
+            <label>meagre {0} expectations</label>
+            <description>I'm just a {0}, I don't need much.</description>
+            <baseMoodEffect>15</baseMoodEffect>
+          </li>
+          <li>
+            <label>{0} expectations</label>
+            <description>I'm just a {0}, but I hope to be well-kept.</description>
+            <baseMoodEffect>12</baseMoodEffect>
+          </li>
+        </stages>
+      </ThoughtDef>
 </Defs>

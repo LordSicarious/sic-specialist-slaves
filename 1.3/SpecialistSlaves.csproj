@@ -98,10 +98,12 @@
         <Compile Include="Source/DutifulServant/RoleEffect_WillingSlave.cs" />
         <Compile Include="Source/DutifulServant/RoleRequirement_SubordinateGender.cs" />
         <Compile Include="Source/DutifulServant/Thought_AssuredSuperiority.cs" />
+        <Compile Include="Source/DutifulServant/ThoughtWorker_ExpectationsDutifulServant.cs" />
         <!-- Harmony Patches -->
         <Compile Include="Source/HarmonyPatches/ApplyHarmonyPatches.cs" />
         <Compile Include="Source/HarmonyPatches/Postfix_ActiveFor.cs" />
         <Compile Include="Source/HarmonyPatches/Postfix_CanParticipateInSlaveRebellion.cs" />
+        <Compile Include="Source/HarmonyPatches/Postfix_CurrentStateInternal.cs" />
         <Compile Include="Source/HarmonyPatches/Postfix_HasRequiredTag.cs" />
         <Compile Include="Source/HarmonyPatches/Postfix_ShouldShowFor.cs" />
         <Compile Include="Source/HarmonyPatches/Postfix_ValidatePawn.cs" />
