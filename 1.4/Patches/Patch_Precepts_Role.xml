@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Adds a RoleRequirement to all role precepts to make rituals consider the slave status of the pawn. -->
+<Patch>
+    <Operation Class="PatchOperationAdd" MayRequire="ludeon.rimworld.ideology">
+        <xpath>/Defs/PreceptDef [preceptClass="Precept_RoleSingle" or
+                                preceptClass="Precept_RoleMulti"]/roleRequirements
+        </xpath>
+        <value>
+            <li Class="SpecialistSlaves.RoleRequirement_SlaveStatus"></li>
+        </value>
+    </Operation>
+<!-- Adds an extension field to certain role defs to enable them to be held by slaves -->
+    <Operation Class="PatchOperationAddModExtension" MayRequire="ludeon.rimworld.ideology">
+        <xpath>/Defs/PreceptDef [defName="IdeoRole_AnimalSpecialist" or
+                                defName="IdeoRole_MedicalSpecialist" or
+                                defName="IdeoRole_MiningSpecialist" or
+                                defName="IdeoRole_PlantsSpecialist" or
+                                defName="IdeoRole_ProductionSpecialist"]
+        </xpath>
+        <value>
+            <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
+                <slavePermitted>Allowed</slavePermitted>
+            </li>
+        </value>
+    </Operation>
+</Patch>

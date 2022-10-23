@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RulePackDef>
+        <defName>NamerRoleDutifulServant</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_roleName(p=2)->[adjective] [noun]</li>
+                <li>r_roleName->[noun]</li>
+                <li>adjective->devoted</li>
+                <li>adjective->dutiful</li>
+                <li>adjective->faithful</li>
+                <li>adjective->loyal</li>
+                <li>adjective->sworn</li>
+                <li>adjective->trusty</li>
+                <li>noun(p=4)->[start][end]</li>
+                <li>noun(p=2)->[any][end]</li>
+                <li>noun(p=2)->[start][any]</li>
+                <li>noun->[any][any]</li>
+                <li>noun->[any]</li>
+                <li>any->serf</li>
+                <li>any->servant</li>
+                <li>any->thrall</li>
+                <li>start->good</li>
+                <li>start->home</li>
+                <li>start->house</li>
+                <li>start->shelter</li>
+                <li>start->labour</li>
+                <li>end->slave</li>
+                <li>end->thing</li>
+                <li>end->worker</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+</Defs>

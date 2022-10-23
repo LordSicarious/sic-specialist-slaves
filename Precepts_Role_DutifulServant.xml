@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Adds the Dutiful Servant role for slaves of the subordinate gender in gendered supremacy ideologies. -->
+<Defs>
+    <PreceptDef Parent="PreceptRoleMultiBase" Name="DutifulServant">
+        <defName>IdeoRole_DutifulServant</defName>
+        <label>dutiful servant</label>
+        <description>A ideoligious status for slaves indicating their willing servitude. Slaves holding this role do not need to be suppressed, are not restricted from art or research, and receive a small bonus to Global Work Speed instead of a penalty. However, they also expect to be better looked after than normal slaves, and their demure nature makes them useless in combat.</description>
+        <iconPath>UI/Roles/DutifulServant</iconPath>
+        <roleTags><li>DutifulServant</li></roleTags>
+        <roleRequirements>
+            <li Class="SpecialistSlaves.RoleRequirement_HighSlaveMood">
+                <labelKey>RoleRequirementLabelHighMood</labelKey>
+            </li>
+        </roleRequirements>
+        <modExtensions>
+            <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
+                <slavePermitted>Required</slavePermitted>
+            </li>
+        </modExtensions>
+        <roleEffects>
+            <li Class="SpecialistSlaves.RoleEffect_WillingSlave"></li>
+            <li Class="RoleEffect_PawnStatFactor">
+                <statDef>PainShockThreshold</statDef>
+                <modifier>0.5</modifier>
+            </li>
+        </roleEffects>
+        <roleDisabledWorkTags>
+            <li>Violent</li>
+        </roleDisabledWorkTags>
+        <displayOrderInImpact>3</displayOrderInImpact>
+        <roleApparelRequirements Inherit="False">
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Collar</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Broadwrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_WarVeil</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_BodyStrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                    <li>FullHead</li>
+                    <li>UpperHead</li>
+                    <li>Legs</li>
+                    <li>Arms</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Burka</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                    <li>Legs</li>
+                    <li>Arms</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Robe</li>
+                </requiredDefs>
+            </requirement></li>
+            <li MayRequire="VanillaExpanded.VAPPE"><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>VAE_Apparel_Apron</li>
+                </requiredDefs>
+            </requirement></li>
+        </roleApparelRequirements>
+        <requiredMemes>
+            <li>Collectivist</li>
+            <li>Guilty</li>
+            <li>Loyalist</li>
+        </requiredMemes>
+    </PreceptDef>
+
+    <PreceptDef Parent="DutifulServant">
+        <defName>IdeoRole_DutifulServant_Gendered</defName>
+        <roleRequirements>
+            <li Class="SpecialistSlaves.RoleRequirement_SubordinateGender">
+                <labelKey>RoleRequirementLabelSubordinateGender</labelKey>
+            </li>
+        </roleRequirements>
+        <requiredMemes>
+            <li>MaleSupremacy</li>
+            <li>FemaleSupremacy</li>
+        </requiredMemes>
+    </PreceptDef>
+
+    <ThoughtDef>
+        <defName>ExpectationsDutifulServant</defName>
+        <workerClass>SpecialistSlaves.ThoughtWorker_ExpectationsDutifulServant</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+          <li>
+            <label>extremely low servile expectations</label>
+            <description>I'm just a {0}, and we have almost nothing. My comfort is irrelevant.</description>
+            <baseMoodEffect>36</baseMoodEffect>
+          </li>
+          <li>
+            <label>very low servile expectations</label>
+            <description>I'm just a {0}, and there's so much work to be done. My comfort is not a priority.</description>
+            <baseMoodEffect>27</baseMoodEffect>
+          </li>
+          <li>
+            <label>low servile expectations</label>
+            <description>I'm just a {0}, and there's work to be done. My comfort is secondary.</description>
+            <baseMoodEffect>20</baseMoodEffect>
+          </li>
+          <li>
+            <label>meagre servile expectations</label>
+            <description>I'm just a {0}, I don't need much.</description>
+            <baseMoodEffect>15</baseMoodEffect>
+          </li>
+          <li>
+            <label>servile expectations</label>
+            <description>I'm just a {0}, but I hope to be well-kept.</description>
+            <baseMoodEffect>12</baseMoodEffect>
+          </li>
+        </stages>
+      </ThoughtDef>
+</Defs>

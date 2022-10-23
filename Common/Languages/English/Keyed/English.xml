@@ -3,13 +3,17 @@
     <RoleRequirementFree>Must be free</RoleRequirementFree>
     <RoleRequirementFreeOrSlave>May be free or a slave</RoleRequirementFreeOrSlave>
     <RoleRequirementSlave>Must be a slave</RoleRequirementSlave>
+    <RoleRequirementLabelHighMood>Mood 80 or higher (to receive role)</RoleRequirementLabelHighMood>
     <RoleEffectWillingSlave>Does not require suppression</RoleEffectWillingSlave>
     <RoleRequirementLabelSubordinateGender>Must be {0}</RoleRequirementLabelSubordinateGender>
 
     <Man>man</Man>
     <Men>men</Men>
+    <Masculine>masculine</Masculine>
     <Woman>woman</Woman>
     <Women>women</Women>
+    <Feminine>feminine</Feminine>
     <Person>person</Person>
     <People>people</People>
+    <Servant>servant</Servant>
 </LanguageData>
