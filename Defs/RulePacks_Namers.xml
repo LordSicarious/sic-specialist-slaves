@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!--==========NEUTRAL==========-->
+    <RulePackDef Name="DutifulServantNamer">
+        <defName>NamerRoleDutifulServant</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_roleName(p=2)->[adjective] [noun]</li>
+                <li>r_roleName->[noun]</li>
+                <li>adjective->devoted</li>
+                <li>adjective->dutiful</li>
+                <li>adjective->faithful</li>
+                <li>adjective->loyal</li>
+                <li>adjective->sworn</li>
+                <li>adjective->trusty</li>
+                <li>noun(p=2)->[start][end]</li>
+                <li>noun->[any]</li>
+                <li>start->[any]</li>
+                <li>end->[any]</li>
+                <li>any->serf</li>
+                <li>any->servant</li>
+                <li>any->thrall</li>
+                <li>start->slave</li>
+                <li>start->good</li>
+                <li>start->home</li>
+                <li>start->house</li>
+                <li>start->shelter</li>
+                <li>start->labour</li>
+                <li>end->slave</li>
+                <li>end->thing</li>
+                <li>end->worker</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <!--==========MALE==========-->
+    <RulePackDef ParentName="DutifulServantNamer">
+        <defName>NamerRoleDutifulServantMale</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_roleName(p=0.2)->butler</li>
+                <li>r_roleName(p=0.2)->steward</li>
+                <li>r_roleName(p=0.2)->footman</li>
+                <li>r_roleName(p=0.2)->valet</li>
+                <li>start->andro</li>
+                <li>start->viro</li>
+                <li>any->boy</li>
+                <li>any->brute</li>
+                <li>any->man</li>
+                <li>end->husband</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+    <!--==========FEMALE==========-->
+    <RulePackDef ParentName="DutifulServantNamer">
+        <defName>NamerRoleDutifulServantFemale</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_roleName(p=0.2)->handmaid</li>
+                <li>r_roleName(p=0.2)->amah</li>
+                <li>r_roleName(p=0.2)->miss</li>
+                <li>start->gyno</li>
+                <li>start->fem</li>
+                <li>any->miss</li>
+                <li>any->woman</li>
+                <li>any->girl</li>
+                <li>any->maid</li>
+                <li>end->maiden</li>
+                <li>end->wife</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+</Defs>

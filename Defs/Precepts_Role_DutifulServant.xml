@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Adds the Dutiful Servant role for slaves of the subordinate gender in gendered supremacy ideologies. -->
+<Defs>
+    <PreceptDef Name="DutifulServantBase">
+        <defName>IdeoRole_DutifulServant</defName>
+        <label>dutiful servant</label>
+        <preceptClass>Precept_RoleMulti</preceptClass>
+        <issue>IdeoRole</issue>
+        <nameMaker>NamerRoleDutifulServant</nameMaker>
+        <description>A ideoligious status for slaves indicating their willing servitude. Slaves holding this role do not need to be suppressed, are not restricted from art or research, and receive a small bonus to Global Work Speed instead of a penalty. However, they also expect to be better looked after than normal slaves, and their demure nature makes them useless in combat.</description>
+        <iconPath>UI/Roles/DutifulServant</iconPath>
+        <roleTags><li>DutifulServant</li></roleTags>
+        <createsRoleEmptyThought>False</createsRoleEmptyThought>
+        <countsTowardsPreceptLimit>False</countsTowardsPreceptLimit>
+        <canGenerateAsSpecialPrecept>True</canGenerateAsSpecialPrecept>
+        <displayOrderInImpact>3</displayOrderInImpact>
+        <impact>Medium</impact>
+        <requiredMemes>
+            <li>Guilty</li>
+            <li>Loyalist</li>
+            <li>Collectivist</li>
+            <li>MaleSupremacy</li>
+            <li>FemaleSupremacy</li>
+        </requiredMemes>
+        <roleRequirements>
+            <li Class="RoleRequirement_SameIdeo">
+                <labelKey>RoleRequirementLabelSameIdeo</labelKey>
+            </li>
+            <li Class="SpecialistSlaves.RoleRequirement_HighMoodToAssign">
+                <labelKey>RoleRequirementLabelHighMood</labelKey>
+            </li>
+            <li Class="SpecialistSlaves.RoleRequirement_SubordinateGender">
+                <labelKey>RoleRequirementLabelSubordinateGender</labelKey>
+            </li>
+        </roleRequirements>
+        <modExtensions>
+            <li Class="SpecialistSlaves.SpecialistSlaves_ModExtension">
+                <slavePermitted>Required</slavePermitted>
+            </li>
+        </modExtensions>
+        <roleEffects>
+            <li Class="SpecialistSlaves.RoleEffect_WillingSlave"></li>
+            <li Class="RoleEffect_PawnStatFactor">
+                <statDef>PainShockThreshold</statDef>
+                <modifier>0.5</modifier>
+            </li>
+        </roleEffects>  
+        <comps>
+            <li Class="PreceptComp_SituationalThought">
+                <thought>IdeoRoleApparelRequirementNotMet</thought>
+            </li>
+        </comps>
+        <roleDisabledWorkTags>
+            <li>Violent</li>
+        </roleDisabledWorkTags>
+        <roleApparelRequirements>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Collar</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Broadwrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_WarVeil</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_BodyStrap</li>
+                </requiredDefs>
+            </requirement></li>
+            <li><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                    <li>FullHead</li>
+                    <li>UpperHead</li>
+                    <li>Legs</li>
+                    <li>Arms</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>Apparel_Burka</li>
+                </requiredDefs>
+            </requirement></li>
+            <li MayRequire="VanillaExpanded.VAPPE"><requirement>
+                <bodyPartGroupsMatchAny>
+                    <li>Neck</li>
+                    <li>Torso</li>
+                    <li>Legs</li>
+                </bodyPartGroupsMatchAny>
+                <requiredDefs>
+                    <li>VAE_Apparel_Apron</li>
+                </requiredDefs>
+            </requirement></li>
+        </roleApparelRequirements>
+        <roleApparelRequirementCountCurve>
+            <points>
+                <li>(0, 1)</li>
+                <li>(1, 1)</li>
+            </points>
+        </roleApparelRequirementCountCurve>
+    </PreceptDef>
+</Defs>

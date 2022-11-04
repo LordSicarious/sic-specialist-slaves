@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>SpecialistSlaves</RootNamespace>
+        <AssemblyName>SpecialistSlaves</AssemblyName>
+        <OutputPath>../Assemblies/</OutputPath>
+        <OutputType>Library</OutputType>
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>3</WarningLevel>
+        <RuntimeIdentifiers></RuntimeIdentifiers>
+        <Prefer32Bit>false</Prefer32Bit>
+        <TargetFramework>net472</TargetFramework>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <!-- Generate new value using uuidgen in terminal each project -->
+        <ProjectGuid>{86fc9e41-9882-4a17-af8a-a7604caeb18e}</ProjectGuid>
+    </PropertyGroup>
+
+    <!-- Dependencies -->    
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.*" ExcludeAssets="runtime" />
+		<PackageReference Include="Krafs.Publicizer" Version="2.0.1"/>
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.3537" />
+		<Publicize Include="Assembly-CSharp" />
+	</ItemGroup>
+</Project>
